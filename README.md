@@ -18,8 +18,37 @@ A 6.25 Hz, 0.80 kbit/s streaming neural audio codec based on [WavLM](https://arx
 
 ## 🛠️ Installation
 
-ZipCodec requires [Python 3.10 or later](https://www.python.org/). Clone the
-repository and install its locked development environment with
+ZipCodec requires [Python 3.10 or later](https://www.python.org/).
+
+### Minimal Torch Hub Installation
+
+To use the pretrained codec through PyTorch Hub, create a virtual environment
+and install only its runtime dependencies:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install torch huggingface-hub numpy safetensors
+```
+
+No repository clone or local ZipCodec installation is required. PyTorch Hub
+downloads and caches the implementation and checkpoint automatically:
+
+```python
+import torch
+
+codec = torch.hub.load(
+    "lucadellalib/zipcodec",
+    "zipcodec",
+    config="lucadellalib/zipcodec",
+    trust_repo=True,
+).eval()
+```
+
+### Full Development Environment
+
+To run the bundled examples or contribute to ZipCodec, clone the repository and
+install its complete locked environment with
 [uv](https://docs.astral.sh/uv/):
 
 **macOS and Linux**
@@ -46,10 +75,12 @@ Confirm that the command is available:
 uv --version
 ```
 
-Then, from the ZipCodec repository, install Python 3.10 and create the
-environment with that exact interpreter and the locked dependencies:
+Clone the repository, install Python 3.10, and create the environment with that
+exact interpreter and the locked dependencies:
 
 ```bash
+git clone https://github.com/lucadellalib/zipcodec.git
+cd zipcodec
 uv python install 3.10
 uv sync --python 3.10
 ```
