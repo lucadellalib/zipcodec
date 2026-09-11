@@ -8,7 +8,7 @@ A 6.25 Hz, 0.80 kbit/s streaming neural audio codec based on [WavLM](https://arx
 
 - 📜 **Paper**: https://arxiv.org/abs/2609.11642
 
-- 🌐 **Project Page**: https://lucadellalib.github.io/focalcodec-web/
+- 🌐 **Project Page**: https://lucadellalib.github.io/zipcodec-web/
 
 - 🔊 **Downstream Tasks**: https://github.com/lucadellalib/audiocodecs
 
