@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zipcodec"
+version = "0.0.1"
+description = "Streaming neural audio codec"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Luca Della Libera", email = "luca.dellalib@gmail.com" },
+]
+keywords = [
+    "neural audio codecs",
+    "vector quantization",
+    "PyTorch",
+    "speech tokenization",
+    "speech compression",
+    "speech processing",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Environment :: GPU :: NVIDIA CUDA",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "huggingface-hub",
+    "numpy",
+    "safetensors",
+    "torch",
+]
+
+[project.optional-dependencies]
+onnx = [
+    "onnx>=1.22.0",
+    "onnxruntime>=1.24.1",
+]
+openvino = [
+    "onnx>=1.22.0",
+    "onnxruntime-openvino>=1.24.1",
+]
+streaming = [
+    "sounddevice>=0.5.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/lucadellalib/zipcodec"
+Repository = "https://github.com/lucadellalib/zipcodec"
+
+[tool.setuptools.packages.find]
+include = ["zipcodec"]
+
+[tool.setuptools.package-data]
+zipcodec = ["py.typed"]
+
+[dependency-groups]
+dev = [
+    "onnx>=1.22.0",
+    "onnxruntime-extensions>=0.15.2",
+    "onnxruntime-openvino>=1.24.1",
+    "onnxruntime-tools>=1.7.0",
+    "onnxscript>=0.7.1",
+    "pre-commit>=4.6.0",
+    "sounddevice>=0.5.5",
+]
