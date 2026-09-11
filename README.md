@@ -167,9 +167,9 @@ codec.save_audio("outputs/reconstruction.wav", wav_rec, sample_rate)
 
 ## 📌 Available Checkpoints
 
-|                  Checkpoint                                           | Sample rate |  Frame rate | Codebooks |  Bitrate  | Streaming |
-|:---------------------------------------------------------------------:|:-----------:|:-----------:|:---------:|:---------:|:---------:|
-| [lucadellalib/zipcodec](https://huggingface.co/lucadellalib/zipcodec) |   16 kHz    |   6.25 Hz   |  64 × 4   | 0.80 kbps |    ✅      |
+| Checkpoint                                                            | Parameters | Sample rate | Frame rate | Codebooks | Bitrate   | Streaming |
+|:---------------------------------------------------------------------:|:----------:|:-----------:|:----------:|:---------:|:---------:|:---------:|
+| [lucadellalib/zipcodec](https://huggingface.co/lucadellalib/zipcodec) |    842M    |   16 kHz    |  6.25 Hz   |  64 × 4   | 0.80 kbps |    ✅     |
 
 ---------------------------------------------------------------------------------------------------------
 
